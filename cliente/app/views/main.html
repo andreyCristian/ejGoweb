@@ -1,0 +1,112 @@
+<header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1 id="homeHeading">Cocina Molecular</h1>
+            <hr>
+            <p>
+                <i>
+                    “La personalidad del cocinero siempre ha de prevalecer sobre los dictados de la moda
+                    o de los que rigen las distintas guías gastronómicas, teniendo como mayor referencia
+                    los platos de mayor tradición” Hilario Arbelaitz
+                </i>
+            </p>
+            <a href="#intro" class="page-scroll btn btn-primary btn-xl page-scroll">Conocer más!</a>
+        </div>
+    </div>
+</header>
+
+<section class="bg-primary" id="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Un placer al paladar!</h2>
+                <hr class="light">
+                <p class="text-faded">
+                    “La gastronomía molecular se ha desarrollado para pasar de un puñado de exponentes a un fenómeno global.
+                    Se ha dirigido hacia la adaptación del equipamiento de laboratorios científicos y la invención de nuevas tecnologías para
+                    la cocina, lo cual supone un pequeño paso para explorar la presentación de los platos. La combinación
+                    de nuestras creaciones culinarias en porcelana multisensorial añade una dimensión extra a la experiencia de comer”.
+                </p>
+                <a href="#tecnics" class="page-scroll btn btn-default btn-xl sr-button">¿Cómo lo hacen?</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="tecnics">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Técnicas</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="card col-lg-3 col-md-6 text-center" ng-repeat="i in main.arrayTecs">
+                <img class="card-img-top img-responsive img-circle" src="styles/Imagenes/{{i.Imagen}}" alt="Card image cap">
+                <div class="card-block content">
+                    <h4 class="card-title">{{i.Titulo}}</h4>
+                    <p class="card-text text-muted">{{i.Info}}</p>
+                </div>
+                <div class="card-block">
+                    <a href="{{i.Url}}" class="btn btn-primary">Más...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="no-padding" id="gallery">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 no-padding" ng-repeat="i in main.arrayGallery">
+                <div class="portfolio-box">
+                    <img src="styles/Imagenes/{{i.Imagen}}" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                <p>
+                                    {{i.Titulo}}
+                                    <br><small>{{i.Restaurante}}</small>
+                                </p>
+                            </div>
+                            <div class="project-name">
+                                {{i.Descripcion}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</aside>
+
+<section class="no-padding" id="comments">
+    <div class="container-comments">
+        <div class="comment-title">
+            <h1>Comentarios</h1>
+            <hr>
+        </div>
+        <div class="row-comment" ng-repeat="i in main.arrayComments">
+            <div class="comment">
+                <div class="comment-img">
+                    <img src="styles/Imagenes/default-user.png" class="img-responsive img-circle">
+                </div>
+                <div class="comment-content">
+                    <h4>{{i.Asunto}}<small>{{i.Fecha}}</small></h4>
+                    <p>{{i.Cuerpo}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row-comment">
+            <span>
+                <a class="btn btn-primary btn-xl comment-button" ng-click="showModal()">Comenta!</a>
+            </span>
+        </div>
+    </div>
+</section>
+
+<script src="styles/script.js"></script>
